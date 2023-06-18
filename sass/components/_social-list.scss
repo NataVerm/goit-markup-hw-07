@@ -3,7 +3,7 @@
     justify-content: space-between;
   }
   
-  .social-list-link {
+  .social-list__link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,19 +11,17 @@
     height: 44px;
     border-radius: 50%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+      background-color: var(--accent-color);
+    }
   }
   
-  .social-list-icon {
+  .social-list__icon {
     fill: #afb1b8;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .social-list-link:hover .social-list-icon,
-  .social-list-link:focus .social-list-icon {
-    fill: var(--primary-text-color-theme-dark);
-  }
-  
-  .social-list-link:hover,
-  .social-list-link:focus {
-    background-color: var(--accent-color);
+    .social-list__link:hover &,
+    .social-list__link:focus & {
+      fill: var(--primary-text-color-theme-dark);
+    }
   }

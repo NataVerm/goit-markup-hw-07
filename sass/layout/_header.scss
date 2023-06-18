@@ -2,7 +2,7 @@
     border-bottom: 1px solid var(--primary-border-color);
   }
   
-  .header-container {
+  .header__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,7 +13,7 @@
     align-items: center;
   }
   
-  .nav-list {
+  .navigation-list {
     display: flex;
     align-items: center;
   }
@@ -23,22 +23,29 @@
     align-items: center;
   }
   
-  .contact-icon {
+  .contact__icon {
     display: inline-flex;
     margin-right: 10px;
     fill: var(--primary-text-color-theme-light);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+    .contact__mail:hover &,
+    .contact__mail:focus &,
+    .contact__tel:hover &,
+    .contact__tel:focus & {
+      fill: var(--accent-color);
+    }
   }
   
-  .nav-list-item:not(:last-child) {
+  .navigation-list__item:not(:last-child) {
     margin-right: 50px;
   }
   
-  .contact-item:not(:last-child) {
+  .contact__item:not(:last-child) {
     margin-right: 40px;
   }
   
-  .nav-list-link {
+  .navigation-list__link {
     color: var(--secondary-text-color-theme-light);
     position: relative;
     display: block;
@@ -50,32 +57,30 @@
     letter-spacing: 0.02em;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
-  }
-  
-  .nav-list-link:hover,
-  .nav-list-link:focus {
+    &:hover,
+  &:focus {
     color: var(--accent-color);
   }
+  }
   
-  
-  .nav-list-active-page {
+  .navigation-list__link-active {
     color: var(--accent-color);
+  
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+    }
   }
   
-  .nav-list-active-page::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: var(--accent-color);
-    border-radius: 2px;
-  }
-  
-  .contact-mail,
-  .contact-tel {
+  .contact__mail,
+  .contact__tel {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,18 +90,9 @@
     letter-spacing: 0.02em;
     color: var(--primary-text-color-theme-light);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .contact-mail:hover .contact-icon,
-  .contact-mail:focus .contact-icon,
-  .contact-tel:hover .contact-icon,
-  .contact-tel:focus .contact-icon {
-    fill: var(--accent-color);
-  }
-  
-  .contact-mail:hover,
-  .contact-mail:focus,
-  .contact-tel:hover,
-  .contact-tel:focus {
+ 
+    &:hover,
+  &:focus {
     color: var(--accent-color);
+  }
   }
